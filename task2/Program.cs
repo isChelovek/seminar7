@@ -40,9 +40,9 @@ int[,] arrayReversColums(int[,] array)
 void arrayReversColums2(int[,] array)
 {
     int tempInt = 0;
-    for (int i = 0; i < array.GetLength(1); i++)
+    for (int i = 0; i < array.GetLength(0); i++)
     {
-        for (int j = 0; j < array.GetLength(0)/2; j++)
+        for (int j = i; j < array.GetLength(1); j++)
         {
             tempInt    = array[j,i];
             array[j,i] = array[i,j];
