@@ -13,8 +13,8 @@ int[,] mainArray = GetArray(m, n);
 PrintArray(mainArray);
 
 
-int[] Unique = countUnique(mainArray);
-int[] numsCount = countRepeatNums(mainArray, Unique);
+int[] unique = countUnique(mainArray);
+int[] numsCount = countRepeatNums(mainArray, unique);
 
 int[] countRepeatNums(int[,] array, int[]uniqueNums)
 {
@@ -26,11 +26,9 @@ int[] countRepeatNums(int[,] array, int[]uniqueNums)
     return result;
 }
 
-
-
-for (int i = 0; i < Unique[0]; i++)
+for (int i = 0; i <= unique[0]; i++)
 {
-    WriteLine($"{Unique[i+1]} встречается {numsCount[i+1]}");
+    WriteLine($"{unique[i+1]} встречается {numsCount[i+1]}");
 }
 
 int SerchElInArray(int[,] array,int El)
@@ -46,7 +44,7 @@ int SerchElInArray(int[,] array,int El)
 
 int[] countUnique (int[,] array)
 {
-    int count = 1;
+    int count = 0;
     int[] uniqueArray = new int[array.GetLength(0) * array.GetLength(1)];
     for (int i = 0; i < array.GetLength(0); i++)
     {
@@ -54,7 +52,7 @@ int[] countUnique (int[,] array)
         {
             if (findEl(uniqueArray, array[i,j]))
             {
-                uniqueArray[count] = array[i,j];
+                uniqueArray[count+1] = array[i,j];
                 count++;
             }
         }
@@ -81,7 +79,7 @@ int [,] GetArray (int m, int n)
     {
         for(int j=0; j<n; j++)
         {
-            result[i,j]=new Random().Next(0,2);
+            result[i,j]=new Random().Next(0,3);
         }
     }
     return result;
