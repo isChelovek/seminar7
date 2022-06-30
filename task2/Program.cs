@@ -51,6 +51,7 @@ void arrayReversColums2(int[,] array)
     }
 }
 
+
 int [,] GetArray (int m, int n)
 {
     int [,] result=new int [m, n];
